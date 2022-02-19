@@ -1,0 +1,11 @@
+{
+  "name": "ksuzushima.github.io",
+  "version": "1.0.0",
+  "description": "bla bla bla",
+  "repository": "https://github.com/ksuzushima/ksuzushima.github.io.git",
+  "author": "unknown",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
+}
