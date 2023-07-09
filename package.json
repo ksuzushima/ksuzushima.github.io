@@ -5,6 +5,9 @@
   "repository": "https://github.com/ksuzushima/ksuzushima.github.io.git",
   "author": "unknown",
   "license": "MIT",
+  "scripts": {
+    "format": "prettier --write './**/*.{js,mjs,css}'"
+  },
   "devDependencies": {
     "prettier": "^3.0.0"
   }
