@@ -2,15 +2,23 @@ body,
 pre {
   margin: 0;
 }
+
 body {
   background: #f7f7f7;
 }
+
 pre {
   font-size: 9pt !important;
   line-height: 1;
-  font-family: Osaka-等幅, Osaka-Mono, ＭＳゴシック, MS Gothic, monospace !important;
+  font-family:
+    Osaka-等幅,
+    Osaka-Mono,
+    ＭＳゴシック,
+    MS Gothic,
+    monospace !important;
   padding-left: 30px;
 }
+
 table {
   display: table;
   border-collapse: separate;
@@ -33,18 +41,18 @@ table {
   border-spacing: 0;
   margin: 0;
 }
+
 td,
 th {
   display: table-cell;
   vertical-align: inherit;
 }
+
 td {
   vertical-align: baseline;
   padding: 0 !important;
 }
-div {
-  display: block;
-}
+
 .line-gutter-backdrop {
   position: absolute;
   z-index: -1;
@@ -52,6 +60,7 @@ div {
   top: 0;
   height: 100%;
 }
+
 .line-gutter-backdrop,
 .line-number {
   box-sizing: border-box;
@@ -61,6 +70,7 @@ div {
   padding: 0 4px !important;
   border-right: 1px solid #bbb !important;
 }
+
 .line-number {
   text-align: right;
   color: gray;
@@ -70,18 +80,23 @@ div {
   font-family: Helvetica;
   user-select: none;
 }
-.line-number:before {
+
+.line-number::before {
   content: attr(value);
 }
+
 .html-doctype {
   color: silver;
 }
+
 .line-content {
   padding: 0 5px !important;
 }
+
 .html-tag {
   color: #881280;
 }
+
 .html-comment {
   color: #236e25;
 }
