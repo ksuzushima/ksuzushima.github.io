@@ -6,6 +6,7 @@
   "author": "unknown",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^8.56.0",
     "prettier": "^2.5.1"
   }
 }
