@@ -10,12 +10,7 @@ body {
 pre {
   font-size: 9pt !important;
   line-height: 1;
-  font-family:
-    Osaka-等幅,
-    Osaka-Mono,
-    ＭＳゴシック,
-    MS Gothic,
-    monospace !important;
+  font-family: Osaka-等幅, Osaka-Mono, ＭＳゴシック, MS Gothic, monospace !important;
   padding-left: 30px;
 }
 
