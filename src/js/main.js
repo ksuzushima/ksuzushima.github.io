@@ -1,5 +1,5 @@
-import { setLineNumber } from "./lineNumber.mjs";
+import { setLineNumber } from './lineNumber.mjs'
 
-document.addEventListener("DOMContentLoaded", () => {
-  setLineNumber();
-});
+document.addEventListener('DOMContentLoaded', () => {
+  setLineNumber()
+})
