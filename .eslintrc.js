@@ -1,23 +1,15 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-  },
-  extends: "eslint:recommended",
+  parser: '@typescript-eslint/parser',
+  extends: ['plugin:astro/recommended'],
   overrides: [
     {
-      env: {
-        node: true,
-      },
-      files: [".eslintrc.{js,cjs}"],
+      files: ['*.astro'],
+      parser: 'astro-eslint-parser',
       parserOptions: {
-        sourceType: "script",
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.astro'],
       },
+      rules: {},
     },
   ],
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-  },
-  rules: {},
 };
