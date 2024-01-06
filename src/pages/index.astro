@@ -1,63 +1,93 @@
+---
+import LineNumber from '@/components/LineNumber.astro';
+import LineContent from '@/components/LineContent.astro';
+import HtmlTag from '@/components/HtmlTag.astro';
+import NBSP from '@/components/NBSP.astro';
+import '@/css/app.css';
+---
+
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ksuzushima</title>
-  <link rel="stylesheet" href="./src/css/app.css">
-</head>
-<body>
-  <div class="line-gutter-backdrop"></div>
-  <table>
-    <tbody>
-      <tr>
-        <td class="line-number"></td>
-        <td class="line-content"><span class="html-doctype">&lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;</span></td>
-      </tr>
-      <tr>
-        <td class="line-number"></td>
-        <td class="line-content"><span class="html-tag">&lt;html&gt;</span></td>
-      </tr>
-      <tr>
-        <td class="line-number"></td>
-        <td class="line-content"><span class="html-tag">&lt;head&gt;</span></td>
-      </tr>
-      <tr>
-        <td class="line-number"></td>
-        <td class="line-content">&nbsp;<span class="html-tag">&lt;title&gt;</span>ksuzushima.github.io<span class="html-tag">&lt;/title&gt;</span></td>
-      </tr>
-      <tr>
-        <td class="line-number"></td>
-        <td class="line-content"><span class="html-tag">&lt;/head&gt;</span></td>
-      </tr>
-      <tr>
-        <td class="line-number"></td>
-        <td class="line-content"><span class="html-tag">&lt;body&gt;</span></td>
-      </tr>
-      <tr>
-        <td class="line-number"></td>
-        <td class="line-content">&nbsp;<span class="html-tag">&lt;h1&gt;</span>Forbidden<span class="html-tag">&lt;/h1&gt;</span></td>
-      </tr>
-      <tr>
-        <td class="line-number"></td>
-        <td class="line-content">&nbsp;<span class="html-tag">&lt;p&gt;</span>You don't have permission to access. <span class="html-tag">&lt;a href="https://github.com/ksuzushima"&gt;</span><a href="https://github.com/ksuzushima">Bye</a><span class="html-tag">&lt;/a&gt;</span><span class="html-tag">&lt;/p&gt;</span></td>
-      </tr>
-      <tr>
-        <td class="line-number"></td>
-        <td class="line-content"><span class="html-tag">&lt;/body&gt;</span></td>
-      </tr>
-      <tr>
-        <td class="line-number"></td>
-        <td class="line-content"><span class="html-tag">&lt;/html&gt;</span></td>
-      </tr>
-      <tr>
-        <td class="line-number"></td>
-        <td class="line-content"><span class="html-end-of-file"></span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <script type="module" src="./js/main.mjs"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ksuzushima</title>
+  </head>
+  <body>
+    <div class="line-gutter-backdrop"></div>
+    <table>
+      <tbody>
+        <tr>
+          <LineNumber />
+          <LineContent>
+            <span class="html-doctype"
+              >&lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;</span
+            >
+          </LineContent>
+        </tr>
+        <tr>
+          <LineNumber />
+          <LineContent><HtmlTag tag="html" /></LineContent>
+        </tr>
+        <tr>
+          <LineNumber />
+          <LineContent><HtmlTag tag="head" /></LineContent>
+        </tr>
+        <tr>
+          <LineNumber />
+          <LineContent>
+            <NBSP />
+            <HtmlTag tag="title" />
+            <span>ksuzushima.github.io</span>
+            <HtmlTag tag="/title" />
+          </LineContent>
+        </tr>
+        <tr>
+          <LineNumber />
+          <LineContent><HtmlTag tag="/head" /></LineContent>
+        </tr>
+        <tr>
+          <LineNumber />
+          <LineContent><HtmlTag tag="body" /></LineContent>
+        </tr>
+        <tr>
+          <LineNumber />
+          <LineContent>
+            <NBSP />
+            <HtmlTag tag="h1" />
+            <span>Forbidden</span>
+            <HtmlTag tag="/h1" />
+          </LineContent>
+        </tr>
+        <tr>
+          <LineNumber />
+          <LineContent>
+            <NBSP />
+            <HtmlTag tag="p" />
+            <span>You don't have permission to access.</span>
+            <HtmlTag tag={`a href="https://github.com/ksuzushima"`} />
+            <a href="https://github.com/ksuzushima">Bye</a>
+            <HtmlTag tag="/a" />
+            <HtmlTag tag="/p" />
+          </LineContent>
+        </tr>
+        <tr>
+          <LineNumber />
+          <LineContent><HtmlTag tag="/body" /></LineContent>
+        </tr>
+        <tr>
+          <LineNumber />
+          <LineContent><HtmlTag tag="/html" /></LineContent>
+        </tr>
+        <tr>
+          <LineNumber />
+          <LineContent><span class="html-end-of-file"></span></LineContent>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>
+
+<script>
+  import '@/js/main.ts';
+</script>
