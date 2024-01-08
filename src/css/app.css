@@ -1,22 +1,6 @@
-body,
-pre {
-  margin: 0;
-}
-
 body {
-  background: #f7f7f7;
-}
-
-pre {
-  font-size: 9pt !important;
-  line-height: 1;
-  font-family:
-    Osaka-等幅,
-    Osaka-Mono,
-    ＭＳゴシック,
-    MS Gothic,
-    monospace !important;
-  padding-left: 30px;
+  background-color: #f7f7f7;
+  margin: 0;
 }
 
 table {
@@ -40,22 +24,4 @@ table {
   white-space: pre-wrap;
   border-spacing: 0;
   margin: 0;
-}
-
-.line-gutter-backdrop {
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  box-sizing: border-box;
-  width: 31px;
-  background-color: #f0f0f0;
-  user-select: none;
-  padding: 0 4px !important;
-  border-right: 1px solid #bbb !important;
-}
-
-.html-doctype {
-  color: silver;
 }

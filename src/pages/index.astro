@@ -3,6 +3,8 @@ import LineNumber from '@/components/LineNumber.astro';
 import LineContent from '@/components/LineContent.astro';
 import HtmlTag from '@/components/HtmlTag.astro';
 import NBSP from '@/components/NBSP.astro';
+import LineGutterBackdrop from '@/components/LineGutterBackdrop.astro';
+import HtmlDoctype from '@/components/HtmlDoctype.astro';
 import '@/css/app.css';
 ---
 
@@ -11,19 +13,17 @@ import '@/css/app.css';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="bla bla bla">
+    <meta name="description" content="bla bla bla" />
     <title>ksuzushima</title>
   </head>
   <body>
-    <div class="line-gutter-backdrop"></div>
+    <LineGutterBackdrop />
     <table>
       <tbody>
         <tr>
           <LineNumber />
           <LineContent>
-            <span class="html-doctype"
-              >&lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;</span
-            >
+            <HtmlDoctype />
           </LineContent>
         </tr>
         <tr>
@@ -82,7 +82,7 @@ import '@/css/app.css';
         </tr>
         <tr>
           <LineNumber />
-          <LineContent><span class="html-end-of-file"></span></LineContent>
+          <LineContent><span /></LineContent>
         </tr>
       </tbody>
     </table>
