@@ -80,7 +80,10 @@ import '@/css/app.css';
             <NBSP />
             <HtmlTag tag="p" />
             <span>You don't have permission to access.</span>
-            <HtmlTag tag={`a href="https://github.com/ksuzushima"`} />
+            <HtmlTag
+              tag="a"
+              attributes={{ href: 'https://github.com/ksuzushima' }}
+            />
             <a href="https://github.com/ksuzushima">Bye</a>
             <HtmlTag tag="/a" />
             <HtmlTag tag="/p" />

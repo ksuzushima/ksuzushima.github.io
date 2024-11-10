@@ -1,15 +1,26 @@
 ---
 interface Props {
   tag: string;
+  attributes?: Record<string, string>;
 }
 
-const { tag } = Astro.props;
+const { tag, attributes } = Astro.props;
+const hasAttributes = attributes && Object.keys(attributes).length > 0;
+const attributeElements =
+  hasAttributes &&
+  Object.entries(attributes)
+    .map(([key, value]) => ` ${key}="${value}"`)
+    .join('');
 ---
 
-<span class="html-tag">&lt;{tag}&gt;</span>
+<span class="html-tag">&lt;{tag}{attributeElements}&gt;</span>
 
 <style>
   .html-tag {
     color: #881280;
+
+    @media (prefers-color-scheme: dark) {
+      color: #5db0d7;
+    }
   }
 </style>
