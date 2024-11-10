@@ -1,0 +1,38 @@
+---
+interface Props {
+  name: string;
+  value?: string;
+}
+
+const { name, value } = Astro.props;
+---
+
+<span class="attribute-name">{name}</span>{
+  value && (
+    <>
+      <>
+        <span>="</span>
+        <span class="attribute-value">{value}</span>
+        <span>"</span>
+      </>
+    </>
+  )
+}
+
+<style>
+  .attribute-name {
+    color: #994500;
+
+    @media (prefers-color-scheme: dark) {
+      color: #9bbbdc;
+    }
+  }
+
+  .attribute-value {
+    color: #1a1aa6;
+
+    @media (prefers-color-scheme: dark) {
+      color: #f29766;
+    }
+  }
+</style>
