@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["Astro"]
+  "cSpell.words": ["Astro"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
