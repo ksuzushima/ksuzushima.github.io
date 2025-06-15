@@ -1,4 +1,11 @@
 {
-  "cSpell.words": ["Astro"],
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "eslint.useFlatConfig": true,
+  "eslint.workingDirectories": ["."],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "astro"
+  ]
 }
