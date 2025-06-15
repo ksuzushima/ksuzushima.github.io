@@ -21,7 +21,6 @@ jobs:
         with:
           path: '.'
           node-version: 24
-          package-manager: pnpm@10.12.1
 
   deploy:
     needs: build
