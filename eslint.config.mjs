@@ -1,24 +1,35 @@
-// @ts-check
-
 import eslint from '@eslint/js';
 import gitignore from 'eslint-config-flat-gitignore';
 import eslintPluginAstro from 'eslint-plugin-astro';
 import globals from 'globals';
-import tsEslint from 'typescript-eslint';
+import tseslint from 'typescript-eslint';
 
-export default tsEslint.config(
+export default tseslint.config(
   gitignore(),
   eslint.configs.recommended,
-  ...tsEslint.configs.recommended,
+  ...tseslint.configs.recommended,
+  ...eslintPluginAstro.configs['flat/recommended'],
   {
-    files: ['**/*.{ts,tsx,mts,cts,astro}'],
+    files: ['**/*.{ts,tsx,mts,cts}'],
     rules: {
       'no-undef': 'off',
     },
   },
-  ...eslintPluginAstro.configs['flat/recommended'],
+  {
+    files: ['**/*.astro'],
+    languageOptions: {
+      parser: eslintPluginAstro.parser,
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.astro'],
+        sourceType: 'module',
+        ecmaVersion: 'latest',
+      },
+    },
+  },
   {
     languageOptions: {
+      ecmaVersion: 'latest',
       globals: {
         ...globals.browser,
         ...globals.node,
