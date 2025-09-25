@@ -134,3 +134,6 @@ dist
 
 # Astro
 .astro/
+
+# Crush
+.crush/
