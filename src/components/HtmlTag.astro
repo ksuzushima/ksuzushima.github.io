@@ -1,19 +1,22 @@
 ---
+import HtmlTagAttribute from '@/components/HtmlTagAttribute.astro';
+
 interface Props {
   tag: string;
   attributes?: Record<string, string>;
 }
 
 const { tag, attributes } = Astro.props;
-const hasAttributes = attributes && Object.keys(attributes).length > 0;
-const attributeElements =
-  hasAttributes &&
-  Object.entries(attributes)
-    .map(([key, value]) => ` ${key}="${value}"`)
-    .join('');
+const attributeEntries = attributes ? Object.entries(attributes) : [];
 ---
 
-<span class="html-tag">&lt;{tag}{attributeElements}&gt;</span>
+<span class="html-tag">&lt;{tag}{
+    attributeEntries.map(([name, value]) => (
+      <>
+        {' '}<HtmlTagAttribute name={name} value={value} />
+      </>
+    ))
+  }&gt;</span>
 
 <style>
   .html-tag {
