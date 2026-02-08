@@ -10,13 +10,16 @@ const { tag, attributes } = Astro.props;
 const attributeEntries = attributes ? Object.entries(attributes) : [];
 ---
 
-<span class="html-tag">&lt;{tag}{
+<span class="html-tag"
+  >&lt;{tag}{
     attributeEntries.map(([name, value]) => (
       <>
-        {' '}<HtmlTagAttribute name={name} value={value} />
+        {' '}
+        <HtmlTagAttribute name={name} value={value} />
       </>
     ))
-  }&gt;</span>
+  }&gt;</span
+>
 
 <style>
   .html-tag {
