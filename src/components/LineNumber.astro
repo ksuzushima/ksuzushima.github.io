@@ -1,4 +1,12 @@
-<td class="line-number"></td>
+---
+interface Props {
+  value: number | string;
+}
+
+const { value } = Astro.props;
+---
+
+<td class="line-number" value={String(value)}></td>
 
 <style>
   .line-number {
@@ -12,7 +20,6 @@
     box-sizing: border-box;
     width: 31px;
     background-color: #f0f0f0;
-    user-select: none;
     padding: 0 4px !important;
     border-right: 1px solid #bbb !important;
 
