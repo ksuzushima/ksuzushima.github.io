@@ -12,7 +12,6 @@ import '@/css/app.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="description" content="bla bla bla" />
     <title>ksuzushima</title>
   </head>
@@ -21,26 +20,26 @@ import '@/css/app.css';
     <table>
       <tbody>
         <tr>
-          <LineNumber />
+          <LineNumber value={1} />
           <LineContent>
             <HtmlDoctype />
           </LineContent>
         </tr>
         <tr>
-          <LineNumber />
+          <LineNumber value={2} />
           <LineContent>
             <HtmlTag tag="html" />
           </LineContent>
         </tr>
         <tr>
-          <LineNumber />
+          <LineNumber value={3} />
           <LineContent>
             <NBSP />
             <HtmlTag tag="head" />
           </LineContent>
         </tr>
         <tr>
-          <LineNumber />
+          <LineNumber value={4} />
           <LineContent>
             <NBSP />
             <NBSP />
@@ -50,21 +49,21 @@ import '@/css/app.css';
           </LineContent>
         </tr>
         <tr>
-          <LineNumber />
+          <LineNumber value={5} />
           <LineContent>
             <NBSP />
             <HtmlTag tag="/head" />
           </LineContent>
         </tr>
         <tr>
-          <LineNumber />
+          <LineNumber value={6} />
           <LineContent>
             <NBSP />
             <HtmlTag tag="body" />
           </LineContent>
         </tr>
         <tr>
-          <LineNumber />
+          <LineNumber value={7} />
           <LineContent>
             <NBSP />
             <NBSP />
@@ -74,7 +73,7 @@ import '@/css/app.css';
           </LineContent>
         </tr>
         <tr>
-          <LineNumber />
+          <LineNumber value={8} />
           <LineContent>
             <NBSP />
             <NBSP />
@@ -90,20 +89,20 @@ import '@/css/app.css';
           </LineContent>
         </tr>
         <tr>
-          <LineNumber />
+          <LineNumber value={9} />
           <LineContent>
             <NBSP />
             <HtmlTag tag="/body" />
           </LineContent>
         </tr>
         <tr>
-          <LineNumber />
+          <LineNumber value={10} />
           <LineContent>
             <HtmlTag tag="/html" />
           </LineContent>
         </tr>
         <tr>
-          <LineNumber />
+          <LineNumber value="🐈" />
           <LineContent>
             <span></span>
           </LineContent>
@@ -112,7 +111,3 @@ import '@/css/app.css';
     </table>
   </body>
 </html>
-
-<script>
-  import '@/js/main.ts';
-</script>
