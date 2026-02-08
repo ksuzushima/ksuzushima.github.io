@@ -1,25 +1,28 @@
 ---
-import HtmlTagAttribute from '@/components/HtmlTagAttribute.astro';
-
 interface Props {
   tag: string;
   attributes?: Record<string, string>;
 }
 
+function escapeHtml(s: string): string {
+  return s
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+}
+
 const { tag, attributes } = Astro.props;
 const attributeEntries = attributes ? Object.entries(attributes) : [];
+const attrHtml = attributeEntries
+  .map(
+    ([name, value]) =>
+      ` <span class="attr-name">${escapeHtml(name)}</span>="<span class="attr-value">${escapeHtml(value)}</span>"`,
+  )
+  .join('');
 ---
 
-<span class="html-tag"
-  >&lt;{tag}{
-    attributeEntries.map(([name, value]) => (
-      <>
-        {' '}
-        <HtmlTagAttribute name={name} value={value} />
-      </>
-    ))
-  }&gt;</span
->
+<span class="html-tag" set:html={`&lt;${escapeHtml(tag)}${attrHtml}&gt;`} />
 
 <style>
   .html-tag {
@@ -27,6 +30,24 @@ const attributeEntries = attributes ? Object.entries(attributes) : [];
 
     @media (prefers-color-scheme: dark) {
       color: #5db0d7;
+    }
+  }
+</style>
+
+<style is:global>
+  .html-tag .attr-name {
+    color: #994500;
+
+    @media (prefers-color-scheme: dark) {
+      color: #9bbbdc;
+    }
+  }
+
+  .html-tag .attr-value {
+    color: #1a1aa6;
+
+    @media (prefers-color-scheme: dark) {
+      color: #f29766;
     }
   }
 </style>
